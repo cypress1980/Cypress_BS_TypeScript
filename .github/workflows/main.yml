@@ -24,6 +24,12 @@ jobs:
                 node-version: [ 18.x]
 
         steps:
+         - name: 'BrowserStack Env Setup'
+           uses: 'browserstack/github-actions/setup-env@master'
+           with:
+              username:  ${{ secrets.BROWSERSTACK_UERNAME }}
+              access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
+
             - name: checkout repository
               uses: actions/checkout@v2
 
@@ -40,4 +46,4 @@ jobs:
 
             - name: Run cypress tests
               run: |
-                npx cypress run --env "TAGS=@Onboarding,environment=test"
+                browserstack-cypress run --env "TAGS=@Onboarding,environment=test"

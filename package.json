@@ -10,11 +10,13 @@
   "license": "ISC",
   "devDependencies": {
     "cypress": "^10.11.0",
-    "typescript": "^5.5.3"
+    "typescript": "^5.5.3",
+    "browserstack-cypress-cli" :"^1.11.2"
   },
   "dependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^20.1.0",
     "@cypress/browserify-preprocessor": "^3.0.2"
+    
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinations": false,
