@@ -38,11 +38,11 @@ jobs:
            with:
             node-version: ${{ matrix.node-version }}
 
-         - name: Install dependencies
+         - name: 'Building web application to be tested'
            run: npm install
 
-         - name: verify cypress cache
-           run: npm ci
+         - name: 'Installing browserstack-cypress-cli'
+           run: npm install -g browserstack-cypress-cli
 
          - name: Run cypress tests
            run: BROWSERSTACK_LOCAL=true browserstack-cypress run
