@@ -46,4 +46,4 @@ jobs:
 
          - name: Run cypress tests
            run: |
-            BROWSERSTACK_LOCAL=true browserstack-cypress run --env "TAGS=@Onboarding,environment=test"
+            BROWSERSTACK_LOCAL=true browserstack-cypress run
