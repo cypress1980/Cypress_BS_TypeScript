@@ -7,7 +7,7 @@ INXchange QA Automation repository.
 In this project we are using Cypress with TypeScript ,BDD/Cucumber and integrated with BrowserStack for testing across a wide range of browsers, operating systems, and devices in the cloud.
 
 
-## Prerequisites
+## Prerequisites .
 
 **Before you begin, ensure you have met the following requirements:**
 
