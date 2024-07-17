@@ -1,0 +1,43 @@
+name: Cypress-Git-hub-actions
+on:
+    push:
+        branches:
+            - development
+
+    workflow_dispatch:
+        inputs:
+            test_suite:
+                description: "Please give tag name"
+                default: SupplierManagement
+                
+            environment:
+                description: "Please give environment"
+                default: test
+                
+
+jobs:
+    cypress-run:
+        runs-on: ubuntu-latest
+
+        strategy:
+            matrix:
+                node-version: [ 18.x]
+
+        steps:
+            - name: checkout repository
+              uses: actions/checkout@v2
+
+            - name: Setup Node.js
+              uses: actions/setup-node@v2
+              with:
+                node-version: ${{ matrix.node-version }}
+
+            - name: Install dependencies
+              run: npm install
+
+            - name: verify cypress cache
+              run: npm ci
+
+            - name: Run cypress tests
+              run: |
+                npx cypress run --env "TAGS=@Onboarding,environment=test"

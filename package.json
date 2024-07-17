@@ -1,0 +1,27 @@
+{
+  "name": "cypress_cucu_br_ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kailash",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^10.11.0",
+    "typescript": "^5.5.3"
+  },
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^20.1.0",
+    "@cypress/browserify-preprocessor": "^3.0.2"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinations": false,
+    "stepDefinitions": [
+      "cypress/e2e/step_definations/**/*.ts"
+    ],
+    "filterSpecs": true,
+    "omitFiltered": true
+  }
+}
