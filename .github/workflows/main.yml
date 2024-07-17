@@ -39,11 +39,11 @@ jobs:
             node-version: ${{ matrix.node-version }}
 
          - name: Install dependencies
-            run: npm install
+           run: npm install
 
          - name: verify cypress cache
-            run: npm ci
+           run: npm ci
 
          - name: Run cypress tests
-            run: |
-              browserstack-cypress run --env "TAGS=@Onboarding,environment=test"
+           run: |
+            browserstack-cypress run --env "TAGS=@Onboarding,environment=test"
