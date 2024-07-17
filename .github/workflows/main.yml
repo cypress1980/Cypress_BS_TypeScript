@@ -30,20 +30,20 @@ jobs:
               username:  ${{ secrets.BROWSERSTACK_UERNAME }}
               access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
 
-            - name: checkout repository
-              uses: actions/checkout@v2
+         - name: checkout repository
+            uses: actions/checkout@v2
 
-            - name: Setup Node.js
-              uses: actions/setup-node@v2
-              with:
-                node-version: ${{ matrix.node-version }}
+         - name: Setup Node.js
+            uses: actions/setup-node@v2
+            with:
+              node-version: ${{ matrix.node-version }}
 
-            - name: Install dependencies
-              run: npm install
+         - name: Install dependencies
+            run: npm install
 
-            - name: verify cypress cache
-              run: npm ci
+         - name: verify cypress cache
+            run: npm ci
 
-            - name: Run cypress tests
-              run: |
-                browserstack-cypress run --env "TAGS=@Onboarding,environment=test"
+         - name: Run cypress tests
+            run: |
+              browserstack-cypress run --env "TAGS=@Onboarding,environment=test"
